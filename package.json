@@ -22,14 +22,18 @@
   "homepage": "https://github.com/zababurinsv/authorization#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "bufferutil": "^4.0.1",
+    "cookie-parser": "^1.4.4",
     "cors": "^2.8.5",
     "enqueue": "^1.0.2",
     "express": "^4.17.1",
     "express-enqueue": "^1.0.0",
+    "local-web-server": "^3.0.7",
     "mongoose": "5.8.7",
     "npm-check-updates": "^4.0.1",
+    "utf-8-validate": "^5.0.2",
     "webdav": "^2.10.1",
-    "cookie-parser": "^1.4.4"
+    "ws": "^7.2.1"
   },
   "devDependencies": {
     "chalk": "^3.0.0",
