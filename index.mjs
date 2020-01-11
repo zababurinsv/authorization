@@ -6,11 +6,12 @@ import Enqueue from "express-enqueue";
 import WebSocket from "ws";
 import cookieParser from "cookie-parser";
 import http from "http";
+import bodyParser from "body-parser";
 const app = express();
 app.use(cookieParser())
 app.use(cors())
 app.disable('x-powered-by');
-
+app.use(bodyParser.json())
 
 const queue = new Enqueue({
     concurrentWorkers: 4,
@@ -43,7 +44,7 @@ app.get('/*', async (req, res) => {
     console.log('~~~~~~/*~~~~~~~', req.cookies.webRTC)
     res.sendFile('/index.html', { root: __dirname });
 })
-
+app.use( express.static('public'));
 app.use(queue.getErrorMiddleware())
 
 app.listen(process.env.PORT || 7005, () => { console.info(`Server running on port: 7005`) });
