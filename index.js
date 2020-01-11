@@ -38,4 +38,4 @@ app.get('/*', async (req, res) => {
     res.sendFile('/index.html', { root: __dirname });
 })
 app.use(queue.getErrorMiddleware())
-app.listen(7005, () => { console.info(`Server running on port: 7005`) });
+app.listen(process.env.PORT || 7005, () => { console.info(`Server running on port: 7005`) });
