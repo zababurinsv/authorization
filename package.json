@@ -28,6 +28,7 @@
     "enqueue": "^1.0.2",
     "express": "^4.17.1",
     "express-enqueue": "^1.0.0",
+    "fs-extra": "^8.1.0",
     "local-web-server": "^3.0.7",
     "mongoose": "5.8.7",
     "npm-check-updates": "^4.0.1",
