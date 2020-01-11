@@ -2,10 +2,10 @@
   "name": "authorization",
   "version": "1.0.0",
   "description": "authorization",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "set NODE_ENV=production&& node index.js"
+    "start": "set NODE_ENV=production&& node --experimental-modules index.mjs"
   },
   "repository": {
     "type": "git",

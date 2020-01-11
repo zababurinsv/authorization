@@ -46,5 +46,4 @@ app.get('/*', async (req, res) => {
 
 app.use(queue.getErrorMiddleware())
 
-export default app
-app.listen(7005, () => { console.info(`Server running on port: 7005`) });
+app.listen(process.env.PORT || 7005, () => { console.info(`Server running on port: 7005`) });
