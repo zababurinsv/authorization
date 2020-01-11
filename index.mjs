@@ -38,13 +38,12 @@ let corsOptions = {
 app.use(cors({
     origin: 'http://localhost:8888'
 }));
-
+app.use(express.static('public'));
 app.options('/*', cors(corsOptions))
 app.get('/*', async (req, res) => {
     console.log('~~~~~~/*~~~~~~~', req.cookies.webRTC)
     res.sendFile('/index.html', { root: __dirname });
 })
-app.use( express.static('public'));
 app.use(queue.getErrorMiddleware())
 
 app.listen(process.env.PORT || 7005, () => { console.info(`Server running on port: 7005`) });
