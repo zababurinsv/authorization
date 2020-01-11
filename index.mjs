@@ -7,6 +7,7 @@ import WebSocket from "ws";
 import cookieParser from "cookie-parser";
 import http from "http";
 import bodyParser from "body-parser";
+import request from "./request.mjs";
 const app = express();
 app.use(cookieParser())
 app.use(cors())
@@ -112,9 +113,9 @@ let telegram = new Clients()
 const webSocketServer = new WebSocket.Server({ server });
 
 webSocketServer.on("connection", async (ws, req) => {
-    // console.log('~~~~~~~~~~~~~~~~~ws~~~~~~~~~~~~~~3~~~~~~~~~', ws.upgradeReq.headers['cookie'])
+    console.log('~~~~~~~!ws!~~~~~~~')
     try {
-        let id = await telegram.getCookie(ws.upgradeReq.headers['cookie'], 'webRTC')
+        let id = await telegram.getCookie(req.headers.cookie, 'webRTC')
         ws.isAlive = true;
 
         ws.on('pong', () => {
@@ -135,7 +136,7 @@ webSocketServer.on("connection", async (ws, req) => {
         // await response(telegram.tlList[id],telegram.wsList[id])
         console.info("Total connected clients:", telegram.class);
     }catch (e) {
-        console.log('@@@@@@@@@@@@@@@@@@@@@@@@', e)
+        console.log('@@@@@@@@~webSocketServer~@@@@@@@@', e)
     }
 });
 setInterval(() => {
@@ -166,11 +167,6 @@ app.get('/connect',  async (req, res) => {
     res.write('\n');
     res.write(response);
 });
-app.options('/init', cors(corsOptions))
-app.post('/init', async (req, res) => {
-    console.log(req.cookies.webRTC)
-    res.send({_:'init'})
-})
 app.options('/*', cors(corsOptions))
 app.get('/*', async (req, res) => {
     console.log('~~~~~~/*~~~~~~~', req.cookies.webRTC)
@@ -179,4 +175,4 @@ app.get('/*', async (req, res) => {
 
 app.use(queue.getErrorMiddleware())
 
-app.listen(process.env.PORT || 7005, () => { console.info(`Server running on port: 7005`) });
+server.listen(process.env.PORT || 7006, () => { console.info(`Server running on port: 7006`) });
