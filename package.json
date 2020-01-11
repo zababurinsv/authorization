@@ -4,7 +4,8 @@
   "description": "authorization",
   "main": "index.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "set NODE_ENV=production&& node --experimental-modules index.mjs"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,20 @@
   "bugs": {
     "url": "https://github.com/zababurinsv/authorization/issues"
   },
-  "homepage": "https://github.com/zababurinsv/authorization#readme"
+  "homepage": "https://github.com/zababurinsv/authorization#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "enqueue": "^1.0.2",
+    "express": "^4.17.1",
+    "express-enqueue": "^1.0.0",
+    "mongoose": "5.8.7",
+    "npm-check-updates": "^4.0.1",
+    "webdav": "^2.10.1",
+    "cookie-parser": "^1.4.4"
+  },
+  "devDependencies": {
+    "chalk": "^3.0.0",
+    "node-emoji": "^1.10.0"
+  }
 }
