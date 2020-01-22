@@ -42,7 +42,6 @@ object['add']['node'] = (obj, pid)=>{
 }
 export default (init = { _:'Authtorization', NETWORK_URL:'http://localhost:4334/authorization',NODE_URL: 'https://pool.testnet.wavesnodes.com' }) => {
     return new Promise((resolve, reject) => {
-        bundle['waves']('', null, async function (error, config) {
             if(isEmpty(init['_'])){ init['_'] = 'Authtorization' }
             if(isEmpty(init['NETWORK_URL'])){ init['_'] = 'http://localhost:4334/authorization' }
             if(isEmpty(init['NODE_URL'])){ init['_'] = 'https://pool.testnet.wavesnodes.com' }
@@ -428,6 +427,5 @@ export default (init = { _:'Authtorization', NETWORK_URL:'http://localhost:4334/
                 }
             }
             resolve(object)
-        })
     })
 }

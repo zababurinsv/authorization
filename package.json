@@ -22,6 +22,7 @@
   "homepage": "https://github.com/zababurinsv/authorization#readme",
   "dependencies": {
     "axios": "^0.19.2",
+    "console-log-html": "^2.0.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "enqueue": "^1.0.2",

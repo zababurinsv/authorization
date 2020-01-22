@@ -3,10 +3,6 @@
 <head>
     <title>Dashboard</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <script src="./static/html/components/component_modules/cell-index/jason.js" async></script>
-    <script src="./static/html/components/component_modules/cell-index/dragula.js" async></script>
-    <script src="./static/html/components/component_modules/cell-index/st.js" async></script>
-    <link rel="preload" href="./static/html/components/component_modules/cell-index/jason.css" as="style" onload="this.rel='stylesheet'">
 </head>
 <body>
 <section id="authorization">
@@ -16,7 +12,7 @@
         <hr>
     </header>
     <div id="components">
-
+        <web3-authorization></web3-authorization>
     </div>
     <div id="info">
         Console
@@ -25,10 +21,10 @@
             <input type="button" value="help" id="help">
         </div>
     </div>
-    <div id="console"></div>
+    <ul id="console"></ul>
 </section>
 </body>
-<script type="module" src="/static/html/components/cell-index/cell-index.mjs"></script>
+<script type="module" src="/static/html/components/web3-authorization/web3-authorization.mjs"></script>
 <!--<script type="module" src="/static/html/components/varan-header/varan-header.mjs"></script>-->
 
 <script type="module">
@@ -137,7 +133,7 @@
         word-wrap: break-word;
         white-space: normal;
     }
-    div#console{
+    ul#console{
         color: #348a00;
         position: relative;
         overflow: scroll;
@@ -151,7 +147,9 @@
         justify-content: center;
         align-items: center;
         padding: 2vw;
-        white-space: normal;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        white-space: pre-wrap;
     }
     div.container{
         width: 100%;

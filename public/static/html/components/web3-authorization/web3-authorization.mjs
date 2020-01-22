@@ -1,4 +1,6 @@
 import Authtorization from '/static/html/components/component_modules/authtorization/authtorization.mjs'
+import ConsoleLogHTML from '/static/html/components/component_modules/console/console.mjs'
+
 customElements.define('web3-authorization',
     class extends HTMLElement {
       static get observedAttributes () {
@@ -710,10 +712,19 @@ customElements.define('web3-authorization',
                   })
             })
         async function modules (obj) {
-          // let socket = new (await webSocket())['class']()
-         let stackexchange = new (await Stackexchange())['class']()
 
-          console.log('^^^^^^^^^^^^^^^^^^^^stackexchange^^^^^^^^^^^^^^^^^^^^^^^^^^', stackexchange)
+          ConsoleLogHTML.connect(document.body.querySelector('#console'));
+
+          // console.debug = function(str0, str1 = '', str2 = '', str3 = '', str4 = '', str5 = ''){
+          //   let console =
+          //   console.insertAdjacentHTML('afterbegin', `${str0} --->>> ${JSON.stringify(str1)}`)
+          //   console.log('~~~~~~~>>>', str0, str1, str2,str3, str4,str5  )
+          // }
+          // let socket = new (await webSocket())['class']()
+         // let authtorization = new ()['class']()
+
+          console.log(await Authtorization())
+
         // let auth = await Authtorization()
         // new auth['class']['namespace']({pid:'waves-auth'})
         // console.assert(false, auth)
