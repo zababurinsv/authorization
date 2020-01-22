@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script src="./static/html/components/component_modules/cell-index/jason.js" async></script>
+    <script src="./static/html/components/component_modules/cell-index/dragula.js" async></script>
+    <script src="./static/html/components/component_modules/cell-index/st.js" async></script>
+    <link rel="preload" href="./static/html/components/component_modules/cell-index/jason.css" as="style" onload="this.rel='stylesheet'">
+</head>
+<body>
+<section id="authorization">
+    <header name="varan-header">
+        <hr>
+        authorization
+        <hr>
+    </header>
+    <div id="components">
+
+    </div>
+    <div id="info">
+        Console
+        <div class="container">
+            <input type="button" value="erase" id="erase">
+            <input type="button" value="help" id="help">
+        </div>
+    </div>
+    <div id="console"></div>
+</section>
+</body>
+<script type="module" src="/static/html/components/cell-index/cell-index.mjs"></script>
+<!--<script type="module" src="/static/html/components/varan-header/varan-header.mjs"></script>-->
+
+<script type="module">
+
+</script>
+<style>
+    :root {
+        --width: 30vw;
+    }
+    div#components{
+        display: flex;
+        flex-direction: row;
+        height: 50vw;
+        flex-wrap: wrap;
+        margin: auto;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    header{
+        text-align: center;
+        font-size: 5vw;
+    }
+    cell-index{
+        width: var(--width);
+        height: calc(var(--width) / 1.333);
+        box-shadow: inset 0vw 0vw 1vw 0px #7694f4;
+        box-sizing: border-box;
+        border: .1vw solid #acb2b5;
+        margin: 0.3vw;
+    }
+    varan-header{
+        width: 100%;
+    }
+    p{
+        margin: 0;
+    }
+    div#name, div#address, div#account, div#runmethod {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: inset 0vw 0vw 1vw 0px #7694f4;
+        box-sizing: border-box;
+        padding: 2vw;
+
+        text-align: center;
+    }
+    input.help,  input.time,  input.last,  input#erase, input#help{
+        cursor: pointer;
+    }
+    input.name, input.address, input.account, input.help, input.runmethod,  input.time,  input.last,input#help,  input#erase{
+        align-self: center;
+        display: flex;
+        align-self: center;
+        box-sizing: border-box;
+        padding: 1vw;
+        flex-direction: row;
+        width: 37vw;
+        border: .1vw solid #acb2b5;
+        border-radius: 0.5vw;
+        margin: auto;
+        margin: 1vw;
+        outline: none;
+    //height: 5vw;
+    @include fonts(8);
+        font-family: Roboto,serif;
+        color: #acb2b5;
+        background: transparent;
+    }
+    label.name, label.address, label.account, div.container, label.runmethod{
+        display: flex;
+        align-self: center;
+        box-sizing: border-box;
+        padding: 1vw;
+        flex-direction: row;
+        width: 37vw;
+        border: .1vw solid #acb2b5;
+        border-radius: 0.5vw;
+        margin: auto;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+        outline: none;
+        justify-content: center;
+    //height: 5vw;
+    @include fonts(8);
+        font-family: Roboto,serif;
+        color: #acb2b5;
+        background: transparent;
+        cursor: pointer;
+    }
+    div#info{
+        color: red;
+        box-shadow: inset 0vw 0vw 1vw 0px #7694f4;
+        padding: 2vw;
+        box-sizing: border-box;
+        text-align: center;
+        left: 5%;
+        width: 100%;
+        background: white;
+        margin: auto;
+        margin-bottom: 1vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    div{
+        word-wrap: break-word;
+        white-space: normal;
+    }
+    div#console{
+        color: #348a00;
+        position: relative;
+        overflow: scroll;
+        height: 50vw;
+        box-sizing: border-box;
+        text-align: left;
+        border-radius: .4vw;
+        box-shadow: inset 0vw 0vw 1vw 0px #7694f4;
+        font-family: Roboto,serif;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2vw;
+        white-space: normal;
+    }
+    div.container{
+        width: 100%;
+        margin: 1vw;
+    }
+</style>
+</html>

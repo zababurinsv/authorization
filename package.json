@@ -4,8 +4,8 @@
   "description": "authorization",
   "main": "index.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "set NODE_ENV=production&& node --experimental-modules index.mjs"
+    "authorization": "set NODE_ENV=production&& node --experimental-modules server.mjs",
+    "start": "set NODE_ENV=production&& node --experimental-modules server.mjs"
   },
   "repository": {
     "type": "git",
@@ -21,22 +21,19 @@
   },
   "homepage": "https://github.com/zababurinsv/authorization#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "bufferutil": "^4.0.1",
-    "cookie-parser": "^1.4.4",
+    "axios": "^0.19.2",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "enqueue": "^1.0.2",
     "express": "^4.17.1",
     "express-enqueue": "^1.0.0",
-    "fs-extra": "^8.1.0",
-    "local-web-server": "^3.0.7",
-    "mongoose": "5.8.7",
-    "npm-check-updates": "^4.0.1",
-    "utf-8-validate": "^5.0.2",
-    "webdav": "^2.10.1",
-    "ws": "^7.2.1"
+    "express-formidable": "^1.2.0",
+    "is-empty": "^1.2.0",
+    "webdav": "^2.10.1"
   },
   "devDependencies": {
+    "nodemon": "^2.0.2",
+    "yargs": "^15.1.0",
     "chalk": "^3.0.0",
     "node-emoji": "^1.10.0"
   }

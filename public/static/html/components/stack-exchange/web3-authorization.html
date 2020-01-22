@@ -1,0 +1,239 @@
+<template>
+    <section id="exchange">
+        <div class="grid--cell">
+
+            <div class="ta-center fs-title mx-auto mb24">
+                <a href="https://stackoverflow.com">
+                    <svg aria-hidden="true" class="svg-icon native iconLogoGlyphMd" width="32" height="37" viewBox="0 0 32 37"><path d="M26 33v-9h4v13H0V24h4v9h22z" fill="#BCBBBB"></path><path d="M21.5 0l-2.7 2 9.9 13.3 2.7-2L21.5 0zM26 18.4L13.3 7.8l2.1-2.5 12.7 10.6-2.1 2.5zM9.1 15.2l15 7 1.4-3-15-7-1.4 3zm14 10.79l.68-2.95-16.1-3.35L7 23l16.1 2.99zM23 30H7v-3h16v3z" fill="#F48024"></path></svg>
+                </a>
+            </div>
+
+
+
+
+
+            <div id="openid-buttons" class="mx-auto grid grid__fl1 fd-column gs8 gsy mb16 wmx3">
+                <button class="grid--cell s-btn s-btn__icon s-btn__google bar-md ba bc-black-3" data-provider="google" data-oauthserver="https://accounts.google.com/o/oauth2/auth" data-oauthversion="2.0">
+                    <svg aria-hidden="true" class="svg-icon native iconGoogle" width="18" height="18" viewBox="0 0 18 18"><path d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 0 0 2.38-5.88c0-.57-.05-.66-.15-1.18z" fill="#4285F4"></path><path d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 0 1-7.18-2.54H1.83v2.07A8 8 0 0 0 8.98 17z" fill="#34A853"></path><path d="M4.5 10.52a4.8 4.8 0 0 1 0-3.04V5.41H1.83a8 8 0 0 0 0 7.18l2.67-2.07z" fill="#FBBC05"></path><path d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 0 0 1.83 5.4L4.5 7.49a4.77 4.77 0 0 1 4.48-3.3z" fill="#EA4335"></path></svg>
+                    Log in with Google        </button>
+                <button class="grid--cell s-btn s-btn__icon s-btn__github bar-md ba bc-black-3" data-provider="github" data-oauthserver="https://github.com/login/oauth/authorize" data-oauthversion="2.0">
+                    <svg aria-hidden="true" class="svg-icon iconGitHub" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38l-.01-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48l-.01 2.2c0 .21.15.46.55.38A8.01 8.01 0 0 0 9 1z" fill="#010101"></path></svg>
+                    Log in with GitHub        </button>
+                <button class="grid--cell s-btn s-btn__icon s-btn__facebook bar-md" data-provider="facebook" data-oauthserver="https://www.facebook.com/v2.0/dialog/oauth" data-oauthversion="2.0">
+                    <svg aria-hidden="true" class="svg-icon iconFacebook" width="18" height="18" viewBox="0 0 18 18"><path d="M3 1a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H3zm6.55 16v-6.2H7.46V8.4h2.09V6.61c0-2.07 1.26-3.2 3.1-3.2.88 0 1.64.07 1.87.1v2.16h-1.29c-1 0-1.19.48-1.19 1.18V8.4h2.39l-.31 2.42h-2.08V17h-2.5z" fill="#4167B2"></path></svg>
+                    Log in with Facebook        </button>
+            </div>
+
+            <div id="formContainer" class="mx-auto mb24 p24 wmx3 bg-white bar-lg auth-shadow mb24">
+                <form id="login-form" class="grid fd-column gs12 gsy" action="/users/login?ssrc=head&amp;returnurl=https%3a%2f%2fstackoverflow.com%2f" method="POST">
+                    <input type="hidden" name="fkey" value="a9d95731b0348dcd8e0cfce0c472ee76aa7e0d4df89745951dd0efd2ceb126f3">
+                    <input type="hidden" name="ssrc" value="head">
+                    <div class="grid fd-column gs4 gsy js-auth-item ">
+                        <label class="grid--cell s-label" for="email">Email</label>
+                        <div class="grid ps-relative">
+                            <input class="s-input" id="email" type="email" size="30" maxlength="100" name="email">
+                            <svg aria-hidden="true" class="svg-icon s-input-icon js-alert-icon d-none iconAlertCircle" width="18" height="18" viewBox="0 0 18 18"><path d="M9 17A8 8 0 1 1 9 1a8 8 0 0 1 0 16zM8 4v6h2V4H8zm0 8v2h2v-2H8z"></path></svg>
+                        </div>
+                        <p class="grid--cell s-input-message js-error-message d-none">
+
+                        </p>
+
+                    </div>
+                    <div class="grid fd-column-reverse gs4 gsy js-auth-item ">
+                        <p class="grid--cell s-input-message js-error-message d-none">
+
+                        </p>
+
+                        <div class="grid ps-relative js-password">
+                            <input class="grid--cell s-input" type="password" autocomplete="off" name="password" id="password">
+                            <svg aria-hidden="true" class="svg-icon s-input-icon js-alert-icon d-none iconAlertCircle" width="18" height="18" viewBox="0 0 18 18"><path d="M9 17A8 8 0 1 1 9 1a8 8 0 0 1 0 16zM8 4v6h2V4H8zm0 8v2h2v-2H8z"></path></svg>
+                        </div>
+                        <div class="grid ai-center ps-relative jc-space-between">
+                            <label class="grid--cell s-label" for="password">Password</label>
+
+                            <a class="grid--cell s-link fs-caption" href="/users/account-recovery">Forgot password?</a>
+                        </div>
+                    </div>
+                    <div class="grid gs4 gsy fd-column js-auth-item ">
+                        <button class="grid--cell s-btn s-btn__primary" id="submit-button" name="submit-button">Log in</button>
+                        <p class="grid--cell s-input-message js-error-message d-none">
+
+                        </p>
+
+                    </div>
+
+                    <input type="hidden" id="oauth_version" name="oauth_version">
+                    <input type="hidden" id="oauth_server" name="oauth_server">
+                </form>
+            </div>
+
+            <div class="mx-auto ta-center fs-body1 p16 pb0 mb24 w100 wmx3">
+
+                Don’t have an account? <a href="/users/signup?ssrc=head&amp;returnurl=https%3a%2f%2fstackoverflow.com%2f">Sign up</a>
+
+                <div class="mt12">
+                    Are you an employer? <a href="https://careers.stackoverflow.com/employer/login" name="talent">Sign up on Talent <svg aria-hidden="true" class="svg-icon va-text-bottom sm:d-none iconShareSm" width="14" height="14" viewBox="0 0 14 14"><path d="M5 1H3a2 2 0 0 0-2 2v8c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V9h-2v2H3V3h2V1z"></path><path d="M7 1h6v6h-2V4.5L6.5 9 5 7.5 9.5 3H7V1z"></path></svg></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="top-cards" class="grid gs16 py32 profile-cards">
+            <aside class="grid--cell fl1 wmx4 s-card bg-black-025 bc-black-2 c-auto js-highlight-box-reputation">
+                <div class="grid fd-column h100">
+                    <h1 class="grid--cell fs-category fs-fine fc-black-350">Репутация</h1>
+                    <div class="grid fd-column grid__allcells6 h100">
+                        <div class="grid grid__allcells6 gs8 mb16">
+                            <div class="grid--cell">
+                                <div class="grid gs8 ai-center bg-black-050 bar-sm fs-title">
+                                    <span class="grid--cell p4">339</span>
+                                </div>
+                                <div class="mt2 fw-bold fs-fine lh-sm js-top"><a href="https://stackexchange.com/leagues/609/quarter/ru-stackoverflow/2019-10-01/272171#272171" target="_blank">в лучших <b>12%</b> за квартал</a></div>
+<!--                                <script> $(function() { $(".js-top").addSpinner().load("/users/rank?userId=272171"); }); </script>-->
+                            </div>
+                        </div>
+                        <div class="grid fd-column">
+                            <div class="grid--cell">
+                                <div class="grid gs4 mb4">
+                                    <h2 class="grid--cell mb0 fs-caption">Следующий знак за метку</h2>
+                                    <div class="grid--cell">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid--cell">
+                                <div class="grid gs8 grid__allcells6">
+                                    <div class="grid--cell" id="rep-card-next-tag-badge">
+                                        <div class="grid gs4 ai-center">
+                                            <div class="grid--cell">
+                                                <a href="/questions/tagged/%d0%be%d0%b1%d1%81%d1%83%d0%b6%d0%b4%d0%b5%d0%bd%d0%b8%d0%b5?sort=unanswered" class="m0 badge-tag js-rep-box-next-badge">
+                                                    <span class="badge3"></span>
+                                                    обсуждение
+                                                </a>
+                                            </div>
+                                            <div class="grid--cell">
+                                                <a href="#" id="tag-badge-settings" class="fc-black-350 css-tooltip js-select-tag-badge js-gps-track" data-gps-track="profile_next_tag_badge_chooser.view" data-title="Выберите отслеживаемый знак за метку"><svg aria-hidden="true" class="svg-icon iconGearSm" width="14" height="14" viewBox="0 0 14 14"><path d="M8.17 11.42l-.39 1.53a6.07 6.07 0 0 1-1.58 0l-.39-1.53c-.39-.1-.75-.26-1.1-.46l-1.35.8c-.42-.31-.8-.69-1.12-1.1l.8-1.37c-.2-.34-.35-.7-.46-1.1L1.05 7.8a6.06 6.06 0 0 1 0-1.57l1.53-.4c.1-.4.25-.76.45-1.11l-.8-1.36c.32-.42.7-.8 1.1-1.11l1.36.8c.35-.2.73-.36 1.13-.47l.4-1.53a6.06 6.06 0 0 1 1.55 0l.4 1.53c.4.1.78.26 1.13.47l1.36-.8c.41.31.78.68 1.1 1.1l-.8 1.36c.2.35.36.73.46 1.13l1.53.39a6.06 6.06 0 0 1 0 1.57l-1.53.39c-.1.4-.27.77-.47 1.11l.8 1.36c-.32.42-.7.8-1.11 1.11l-1.36-.8c-.34.2-.71.35-1.1.45zM7 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path></svg></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid--cell">
+                                        <div class="grid fd-column mb4 zero">
+                                            <div class="grid--cell mb2 fs-fine fc-light">0/100 баллов рейтинга</div>
+                                            <div class="grid--cell s-progress">
+                                                <div class="s-progress--bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="grid fd-column zero">
+                                            <div class="grid--cell mb2 fs-fine fc-light">0/20 ответов</div>
+                                            <div class="grid--cell s-progress">
+                                                <div class="s-progress--bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <aside class="grid--cell fl1 wmx4 s-card bg-black-025 bc-black-2 c-auto js-highlight-box-badges">
+                <div class="grid fd-column h100">
+                    <h1 class="grid--cell fs-category fs-fine fc-black-350">Знаки</h1>
+
+                    <div class="grid fd-column grid__allcells6 h100">
+                        <div class="grid--cell mb4">
+
+                            <div class="grid gs4 grid__fl1">
+
+                                <div class="grid--cell">
+                                    <div class="grid ai-center badge2-alternate" title="1 серебряный знак">
+                                        <span class="grid--cell badge2"></span>
+                                        <span class="grid grid__center fl1 -total">1</span>
+                                    </div>
+                                </div>
+
+                                <div class="grid--cell">
+                                    <div class="grid ai-center badge3-alternate" title="4&nbsp;бронзовых знака">
+                                        <span class="grid--cell badge3"></span>
+                                        <span class="grid grid__center fl1 -total">4</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="grid grid__allcells6 gs8 jc-end">
+                            <div class="grid--cell">
+                                <h2 class="mb4 fs-caption">Новые</h2>
+                                <div id="badge-card-last">
+                                    <a href="/help/badges/13/yearling?userid=272171" title="" class="badge"><span class="badge2"></span>&nbsp;Годовалый</a>
+                                </div>
+                            </div>
+                            <div class="grid--cell">
+                                <div class="grid fd-column">
+                                    <div class="grid gs4">
+                                        <h2 class="grid--cell mb6 fs-caption">След. знак:</h2>
+                                        <div class="grid--cell">
+                                            <a href="#" id="badge-card-settings" class="fc-black-350 css-tooltip js-select-badge js-gps-track" data-title="Выберите, какой знак отслеживать" data-gps-track="profile_next_badge_chooser.view"><svg aria-hidden="true" class="svg-icon iconGearSm" width="14" height="14" viewBox="0 0 14 14"><path d="M8.17 11.42l-.39 1.53a6.07 6.07 0 0 1-1.58 0l-.39-1.53c-.39-.1-.75-.26-1.1-.46l-1.35.8c-.42-.31-.8-.69-1.12-1.1l.8-1.37c-.2-.34-.35-.7-.46-1.1L1.05 7.8a6.06 6.06 0 0 1 0-1.57l1.53-.4c.1-.4.25-.76.45-1.11l-.8-1.36c.32-.42.7-.8 1.1-1.11l1.36.8c.35-.2.73-.36 1.13-.47l.4-1.53a6.06 6.06 0 0 1 1.55 0l.4 1.53c.4.1.78.26 1.13.47l1.36-.8c.41.31.78.68 1.1 1.1l-.8 1.36c.2.35.36.73.46 1.13l1.53.39a6.06 6.06 0 0 1 0 1.57l-1.53.39c-.1.4-.27.77-.47 1.11l.8 1.36c-.32.42-.7.8-1.11 1.11l-1.36-.8c-.34.2-.71.35-1.1.45zM7 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path></svg></a>
+                                        </div>
+
+
+                                        <span class="grid--cell ml-auto fs-caption">0/1</span>
+                                    </div>
+                                    <div class="grid--cell">
+                                        <div id="badge-card-next" class="s-progress s-progress__badge s-progress__bronze js-badge-select-popup js-gps-track" data-gps-track="profile_next_badge.click({ view_type: 1 })">
+                                            <div class="grid gs12 gsx m0 s-progress--label">
+                                                <div class="grid--cell mr0 s-badge--image badge3"></div>
+                                                <div class="grid grid__center fl1 s-badge--label">Критик</div>
+                                            </div>
+                                            <div class="s-progress--bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <aside class="grid--cell wmn2 s-card bg-black-025 bc-black-2 c-auto">
+                <div class="grid fd-column h100">
+                    <h1 class="grid--cell fs-category fs-fine fc-black-350">Влияние</h1>
+                    <div class="grid fd-column gs2 css-tooltip" data-title="Примерное число раз, когда посетители видели ваши полезные сообщения (считается на основе просмотров ваших вопросов и высоко оцененных ответов)">
+                        <div class="grid--cell fs-body3 fc-dark lh-sm">
+                            <span class="tilde">~</span>174                </div>
+                        <div class="grid--cell fs-caption fc-light">людей затронул</div>
+                    </div>
+                    <div class="grid--cell mt-auto fc-black-350 fs-caption lh-sm">
+                        <div class="grid fd-column gs4">
+                            <div class="grid--cell">
+                                <div class="grid gs4 ai-center" title="Общее количество правок, улучшающих существующие сообщения">
+                                    <div class="grid--cell"><svg aria-hidden="true" class="svg-icon iconPencil" width="18" height="18" viewBox="0 0 18 18"><path d="M13.68 2.15l2.17 2.17c.2.2.2.51 0 .71L14.5 6.39l-2.88-2.88 1.35-1.36c.2-.2.51-.2.71 0zM2 13.13l8.5-8.5 2.88 2.88-8.5 8.5H2v-2.88z"></path></svg></div>
+                                    <div class="grid--cell">
+                                        0 правок                            </div>
+                                </div>
+                            </div>
+                            <div class="grid--cell">
+                                <div class="grid gs4 ai-center" title="Общее количество тревог, признанных полезными">
+                                    <div class="grid--cell"><svg aria-hidden="true" class="svg-icon iconFlag" width="18" height="18" viewBox="0 0 18 18"><path d="M3 2v14h2v-6h3.6l.4 1h6V3H9.5L9 2H3z"></path></svg></div>
+                                    <div class="grid--cell">
+                                        <a href="/users/flag-summary/272171" class="fc-medium">0 полезных тревог</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid--cell">
+                                <div class="grid gs4 ai-center" title="Суммарное количество голосов «за» и «против»">
+                                    <div class="grid--cell"><svg aria-hidden="true" class="svg-icon iconArrowUp" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13h16L9 5l-8 8z"></path></svg></div>
+                                    <div class="grid--cell">
+                                        <a href="/users/272171/sergey?tab=votes" class="fc-medium">1 голос</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+</template>
